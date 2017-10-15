@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Client js</title>
+</head>
+ 
+<body>
+	<h2>Controle distant</h2>
+	<br>
+	<h4>Connection : <span id="Etat"></span></h4>
+	<p>
+	<script src="/socket.io/socket.io.js"></script>
+
+		<button id="btPrev" onclick="askPrev()">Precedent</button>
+		<button id="btPause" onclick="askPause()">Pause</button>
+		<button id="btNext" onclick="askNext()">Suivant</button>
+		<br>
+		Volume : <span id="Vol"></span>
+		<br>
+		<input id="txtVol" type="number" max="400" min ="0" step="10" onchange="setVolume()"></input><br>
+		<button id="btSetVol" onclick="setVolume()">Appliqué</button>
+		<button id="btGet" onclick="getRemoteInfo()">actualiser</button>
+		<br>
+		Title : <span id="Tle"></span><br>
+		<br>
+		<form action="/uploads" method="post" enctype="multipart/form-data">
+			<input id="upload" type="file" name="upload"><br>
+			<input type="submit" name="sub" value="Envoi"><br>
+		</form>
+
+	<script src="client.js"></script>
+	</p>
+	<!--
+	<p>
+	<form action="">
+	Please input des fichiers ici:<br>
+		<input id="ficher" type="file" name="datafile"><br>
+		<input type="submit" value="Submit">
+	</form>
+	</p>
+	-->
+</body>
+</html>
+
